@@ -129,7 +129,7 @@ def SendMorseCode(MorseCode):
     PlainText = input("Enter your message (uppercase letters and spaces only): ")
 
     for char in PlainText:
-        if char != char.upper():
+        if char != char.upper():#this is shit, it should just convert text to uppercase
             exit()
 
     PlainTextLength = len(PlainText)
@@ -139,7 +139,7 @@ def SendMorseCode(MorseCode):
         if PlainTextLetter == SPACE:
             Index = 0
         else:
-            Index = ord(PlainTextLetter) - ord("A") + 1  #
+            Index = ord(PlainTextLetter) - ord("A") + 1  #subtracts the asci value of the current letter from the asci value of "A" 
         CodedLetter = MorseCode[Index]
         MorseCodeString = MorseCodeString + CodedLetter + SPACE
     print(MorseCodeString)
